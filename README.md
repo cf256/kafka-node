@@ -99,7 +99,7 @@ const client = new kafka.KafkaClient({kafkaHost: '10.3.100.196:9092'});
 
 ## Client
 ### Client(connectionString, clientId, [zkOptions], [noAckBatchOptions], [sslOptions])
-* `connectionString`: Zookeeper connection string, default `localhost:2181/`
+* `connectionString`: Zookeeper connection string, default `localhost:2181/`. Can also be a comma separated list of connection strings, e.g. `localhost:2181, 192.168.1.90:2181`. 
 * `clientId`: This is a user-supplied identifier for the client application, default `kafka-node-client`
 * `zkOptions`: **Object**, Zookeeper options, see [node-zookeeper-client](https://github.com/alexguan/node-zookeeper-client#client-createclientconnectionstring-options)
 * `noAckBatchOptions`: **Object**, when requireAcks is disabled on Producer side we can define the batch properties, 'noAckBatchSize' in bytes and 'noAckBatchAge' in milliseconds. The default value is `{ noAckBatchSize: null, noAckBatchAge: null }` and it acts as if there was no batch
